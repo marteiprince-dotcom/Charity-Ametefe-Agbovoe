@@ -15,9 +15,7 @@
   --cream: #fffaf5;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -42,28 +40,13 @@ header {
   flex-wrap: wrap;
 }
 
-.brand {
-  font-size: 18px;
-}
+.brand { font-size: 18px; }
 
 .brand small {
   display: block;
   color: #e0c7f3;
   font: 12px Arial, sans-serif;
   margin-top: 5px;
-}
-
-button {
-  cursor: pointer;
-  font: inherit;
-}
-
-.edit-button {
-  border: 1px solid var(--gold);
-  border-radius: 7px;
-  padding: 10px 14px;
-  background: transparent;
-  color: white;
 }
 
 nav {
@@ -89,12 +72,12 @@ nav button {
   color: var(--deep);
   background: #f3eafa;
   white-space: nowrap;
+  cursor: pointer;
+  font: inherit;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-nav button:hover {
-  background: #e5d0f4;
-}
+nav button:hover { background: #e5d0f4; }
 
 nav button.active {
   background: var(--purple);
@@ -113,7 +96,6 @@ main {
   padding: 0 16px;
 }
 
-/* All memorial sections remain visible while scrolling. */
 .page {
   display: block;
   min-height: 540px;
@@ -123,10 +105,6 @@ main {
   background: var(--cream);
   border: 1px solid #e1d0eb;
   box-shadow: 0 8px 30px #37154a12;
-}
-
-.page.active {
-  display: block;
 }
 
 .cover {
@@ -167,9 +145,7 @@ h1 {
   margin: 20px 0;
 }
 
-h2 {
-  color: var(--purple);
-}
+h2 { color: var(--purple); }
 
 .dates {
   color: var(--deep);
@@ -195,9 +171,7 @@ h2 {
   padding: 8px;
 }
 
-.event:last-child {
-  border: 0;
-}
+.event:last-child { border: 0; }
 
 .event strong {
   display: block;
@@ -232,13 +206,9 @@ h2 {
   overflow-wrap: anywhere;
 }
 
-.order-list {
-  line-height: 2;
-}
+.order-list { line-height: 2; }
 
-.order-list li {
-  padding-left: 6px;
-}
+.order-list li { padding-left: 6px; }
 
 .order-list li::marker {
   color: var(--gold);
@@ -265,24 +235,20 @@ footer {
   font-size: 12px;
 }
 
-[contenteditable="true"] {
-  outline: 2px dashed #c69ce3;
-  outline-offset: 3px;
+.print-button {
+  cursor: pointer;
+  font: inherit;
+  padding: 10px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 7px;
+  background: var(--purple);
+  color: white;
 }
 
-.hidden {
-  display: none !important;
-}
-
-#status {
-  display: block;
-  margin-top: 12px;
-}
+.print-button:hover { background: var(--deep); }
 
 @media (max-width: 600px) {
-  header {
-    padding: 16px;
-  }
+  header { padding: 16px; }
 
   main {
     margin: 12px auto;
@@ -304,9 +270,7 @@ footer {
     scroll-margin-top: 80px;
   }
 
-  .events {
-    grid-template-columns: 1fr;
-  }
+  .events { grid-template-columns: 1fr; }
 
   .event {
     border-right: 0;
@@ -314,43 +278,22 @@ footer {
     padding: 12px 8px;
   }
 
-  .event:last-child {
-    border-bottom: 0;
-  }
+  .event:last-child { border-bottom: 0; }
 
-  .portrait {
-    max-width: 100%;
-  }
+  .portrait { max-width: 100%; }
 
-  .tribute {
-    padding: 12px;
-  }
-
-  footer button {
-    margin: 4px;
-  }
+  .tribute { padding: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  nav button {
-    transition: none;
-  }
+  html { scroll-behavior: auto; }
+  nav button { transition: none; }
 }
 
 @media print {
-  header,
-  nav,
-  footer,
-  .screen-only {
-    display: none !important;
-  }
+  header, nav, footer { display: none !important; }
 
-  html,
-  body {
+  html, body {
     background: white;
     scroll-behavior: auto;
   }
@@ -361,8 +304,7 @@ footer {
     max-width: none;
   }
 
-  .page,
-  .page.active {
+  .page {
     display: block !important;
     min-height: 0;
     box-shadow: none;
@@ -392,10 +334,6 @@ footer {
     IN LOVING MEMORY
     <small>Charity Ametepe Agbovoe · Memorial website</small>
   </div>
-
-  <button class="edit-button screen-only" id="editBtn">
-    Enable editing
-  </button>
 </header>
 
 <nav id="tabs" aria-label="Memorial sections">
@@ -409,7 +347,7 @@ footer {
 
 <main>
 
-  <section class="page cover active" id="home">
+  <section class="page cover" id="home">
     <p class="kicker">In Loving Memory</p>
     <div class="cross">✝</div>
     <div class="gold-rule"></div>
@@ -418,50 +356,45 @@ footer {
       class="portrait"
       id="portrait"
       alt="Portrait of Charity Ametepe Agbovoe"
-      src="https://placehold.co/400x500/e6d0f7/64268e?text=Upload+Portrait"
+      src="https://placehold.co/400x500/e6d0f7/64268e?text=Portrait"
     >
 
-    <h1 data-edit>Charity<br>AMETEPE<br>AGBOVOE</h1>
-    <p class="dates" data-edit>NOV 11 1991 – AUG 11 2026</p>
+    <h1>Charity<br>AMETEPE<br>AGBOVOE</h1>
+    <p class="dates">NOV 11 1991 – AUG 11 2026</p>
 
     <div class="gold-rule"></div>
 
     <div class="events">
       <div class="event">
         <strong>WAKE</strong>
-        <p data-edit>30th OCT 2026</p>
+        <p>30th OCT 2026</p>
       </div>
 
       <div class="event">
         <strong>BURIAL</strong>
-        <p data-edit>31st OCT 2026</p>
+        <p>31st OCT 2026</p>
       </div>
 
       <div class="event">
         <strong>THANKSGIVING</strong>
-        <p data-edit>Grace Baptist Church, Bator<br>1st NOV 2026 · 8am</p>
+        <p>Grace Baptist Church, Bator<br>1st NOV 2026 · 8am</p>
       </div>
     </div>
 
     <h3>VENUE</h3>
-    <div class="venue" data-edit>Adidokpoe, Battor,<br>Volta Region</div>
+    <div class="venue">Adidokpoe, Battor,<br>Volta Region</div>
 
-    <p class="subtitle" style="margin-top:35px" data-edit>
+    <p class="subtitle" style="margin-top:35px">
       “Blessed are the poor in spirit:
       for theirs is the kingdom of heaven.”
     </p>
-
-    <label class="screen-only hidden" id="photoLabel">
-      Replace portrait
-      <input type="file" id="photoInput" accept="image/*">
-    </label>
   </section>
 
   <section class="page" id="service">
     <h2 class="content-title">Order of Service</h2>
     <p class="subtitle">Church Service</p>
 
-    <ol class="order-list" data-edit contenteditable="false">
+    <ol class="order-list">
       <li>Prelude Choruses</li>
       <li>Opening Prayer</li>
       <li>Opening Hymn</li>
@@ -483,10 +416,9 @@ footer {
     </ol>
 
     <div class="gold-rule"></div>
-
     <h2>Part II — Graveyard</h2>
 
-    <ol class="order-list" data-edit contenteditable="false">
+    <ol class="order-list">
       <li>Opening Prayer</li>
       <li>Hymn</li>
       <li>Lowering of Casket</li>
@@ -503,25 +435,25 @@ footer {
     <p class="subtitle">“A Beautiful Soul, A Gentle Spirit, and a Legacy of Kindness.”</p>
 
     <h3>Birth and Family Background</h3>
-    <p class="body-text" data-edit contenteditable="false">Charity Ametepe Agbovoe was a woman of determination, humility, hard work and unwavering kindness. She was born on 13th November 1991 in Dambayie in the Volta Region of Ghana. Her life was marked by love, learning and self-discovery.
+    <p class="body-text">Charity Ametepe Agbovoe was a woman of determination, humility, hard work and unwavering kindness. She was born on 13th November 1991 in Dambayie in the Volta Region of Ghana. Her life was marked by love, learning and self-discovery.
 
-Edit this biography to add or correct her family history and early life.</p>
+Edit this biography in the website code to add or correct her family history and early life.</p>
 
     <h3>Educational Background</h3>
-    <p class="body-text" data-edit contenteditable="false">Charity began her educational journey at Pigfarm Junior High School in Accra. She pursued vocational training to develop her talents and skills in hairdressing and beauty care.
+    <p class="body-text">Charity began her educational journey at Pigfarm Junior High School in Accra. She pursued vocational training to develop her talents and skills in hairdressing and beauty care.
 
-Add her complete educational history here.</p>
+Add her complete educational history in the website code.</p>
 
     <h3>Career and Professional Life</h3>
-    <p class="body-text" data-edit contenteditable="false">Through hard work and perseverance, Charity established herself as a professional hairdresser. Her dedication, versatility and strong work ethic inspired those around her.
+    <p class="body-text">Through hard work and perseverance, Charity established herself as a professional hairdresser. Her dedication, versatility and strong work ethic inspired those around her.
 
-Add or correct her career history here.</p>
+Add or correct her career history in the website code.</p>
 
     <h3>Personality and Character</h3>
-    <p class="body-text" data-edit contenteditable="false">Charity was a woman of gentle spirit, humility and remarkable kindness. Her calm nature, compassion and love for her family made her special to everyone who knew her.</p>
+    <p class="body-text">Charity was a woman of gentle spirit, humility and remarkable kindness. Her calm nature, compassion and love for her family made her special to everyone who knew her.</p>
 
     <h3>Her Legacy and Final Tribute</h3>
-    <p class="body-text" data-edit contenteditable="false">Her life remains a testament to perseverance, courage and kindness. Though she is gone from our sight, her memories will forever remain in the hearts of those who loved her.</p>
+    <p class="body-text">Her life remains a testament to perseverance, courage and kindness. Though she is gone from our sight, her memories will forever remain in the hearts of those who loved her.</p>
   </section>
 
   <section class="page" id="family">
@@ -529,30 +461,30 @@ Add or correct her career history here.</p>
 
     <div class="tribute">
       <h3>Tribute from Parents (Mother)</h3>
-      <p class="body-text" data-edit contenteditable="false">My precious Charity, my daughter, my own flesh and blood, where do I begin? You were deeply loved, and you will always remain in my heart.
+      <p class="body-text">My precious Charity, my daughter, my own flesh and blood, where do I begin? You were deeply loved, and you will always remain in my heart.
 
-Replace this sample with the complete tribute from her mother.</p>
+Replace this sample with the complete tribute from her mother in the website code.</p>
     </div>
 
     <div class="tribute">
       <h3>Tribute from Siblings</h3>
-      <p class="body-text" data-edit contenteditable="false">We never knew that our last moments together would become memories we would spend a lifetime wishing to relive.
+      <p class="body-text">We never knew that our last moments together would become memories we would spend a lifetime wishing to relive.
 
-Add the complete tribute from her siblings here.</p>
+Add the complete tribute from her siblings in the website code.</p>
     </div>
 
     <div class="tribute">
       <h3>Tribute from Cousins</h3>
-      <p class="body-text" data-edit contenteditable="false">Our dearest Charity, how do we find the strength to say goodbye to someone who was such a beautiful part of our family?
+      <p class="body-text">Our dearest Charity, how do we find the strength to say goodbye to someone who was such a beautiful part of our family?
 
-Add the complete tribute from her cousins here.</p>
+Add the complete tribute from her cousins in the website code.</p>
     </div>
 
     <div class="tribute">
       <h3>Tribute from Aunts and Uncles</h3>
-      <p class="body-text" data-edit contenteditable="false">Our precious and beloved daughter, you will always remain in our hearts.
+      <p class="body-text">Our precious and beloved daughter, you will always remain in our hearts.
 
-Add the complete tribute from her aunts and uncles here.</p>
+Add the complete tribute from her aunts and uncles in the website code.</p>
     </div>
   </section>
 
@@ -561,30 +493,30 @@ Add the complete tribute from her aunts and uncles here.</p>
 
     <div class="tribute">
       <h3>Tribute from Nieces and Nephews</h3>
-      <p class="body-text" data-edit contenteditable="false">Our dearest Auntie Charity, how do we say goodbye to someone who loved us so dearly?
+      <p class="body-text">Our dearest Auntie Charity, how do we say goodbye to someone who loved us so dearly?
 
-Add the complete tribute here.</p>
+Add the complete tribute in the website code.</p>
     </div>
 
     <div class="tribute">
       <h3>Tribute on Behalf of Her Daughter</h3>
-      <p class="body-text" data-edit contenteditable="false">My dearest Mummy, I never got the chance to see your beautiful smile, hear your gentle voice or feel the warmth of your loving arms.
+      <p class="body-text">My dearest Mummy, I never got the chance to see your beautiful smile, hear your gentle voice or feel the warmth of your loving arms.
 
-Add the complete tribute from her daughter here.</p>
+Add the complete tribute from her daughter in the website code.</p>
     </div>
 
     <div class="tribute">
       <h3>Tribute from the Church</h3>
-      <p class="body-text" data-edit contenteditable="false">Our beloved Charity, with heavy hearts, we bid farewell to a precious member of our church family.
+      <p class="body-text">Our beloved Charity, with heavy hearts, we bid farewell to a precious member of our church family.
 
-Add the complete church tribute here.</p>
+Add the complete church tribute in the website code.</p>
     </div>
 
     <div class="tribute">
       <h3>Tribute to My Dearest Friend, Charity</h3>
-      <p class="body-text" data-edit contenteditable="false">Some friendships become family, and some goodbyes leave a pain that never fades.
+      <p class="body-text">Some friendships become family, and some goodbyes leave a pain that never fades.
 
-Add the complete tribute from her friend here.</p>
+Add the complete tribute from her friend in the website code.</p>
     </div>
   </section>
 
@@ -593,7 +525,7 @@ Add the complete tribute from her friend here.</p>
     <div class="gold-rule"></div>
     <p class="subtitle">From the Ametepe Agbovoe Family</p>
 
-    <p class="body-text" style="text-align:center" data-edit contenteditable="false">The Ametepe Agbovoe Family expresses our heartfelt gratitude to all relatives, friends, sympathisers and well-wishers for your love, prayers, presence and generous support during the loss and final farewell of our beloved Charity Ametepe Agbovoe.
+    <p class="body-text" style="text-align:center">The Ametepe Agbovoe Family expresses our heartfelt gratitude to all relatives, friends, sympathisers and well-wishers for your love, prayers, presence and generous support during the loss and final farewell of our beloved Charity Ametepe Agbovoe.
 
 Your kindness and comforting words gave us strength in our moments of sorrow. We are deeply touched by your sacrifices and support.
 
@@ -602,7 +534,7 @@ May the Almighty God richly bless and reward you all.</p>
     <div class="gold-rule"></div>
     <p class="subtitle">— The Bereaved Family</p>
     <div class="cross">✝</div>
-    <p class="subtitle" data-edit>May her beautiful soul rest in perfect peace.</p>
+    <p class="subtitle">May her beautiful soul rest in perfect peace.</p>
   </section>
 
 </main>
@@ -610,29 +542,15 @@ May the Almighty God richly bless and reward you all.</p>
 <footer>
   A life remembered. A love that remains.
   <br><br>
-
-  <button class="edit-button" style="background:#64268e"
-    onclick="window.print()">Print / Save PDF</button>
-
-  <button class="edit-button" style="background:#64268e"
-    id="saveBtn">Save edits</button>
-
-  <button class="edit-button" style="background:#64268e"
-    id="exportBtn">Export text backup</button>
-
-  <span id="status" role="status" aria-live="polite"></span>
+  <button class="print-button" onclick="window.print()">
+    Print / Save PDF
+  </button>
 </footer>
 
 <script>
 const tabs = [...document.querySelectorAll("#tabs button")];
 const pages = [...document.querySelectorAll(".page")];
-const editBtn = document.getElementById("editBtn");
-const editable = [...document.querySelectorAll("[data-edit]")];
-const status = document.getElementById("status");
 
-let editing = false;
-
-/* Update the highlighted navigation tab. */
 function setActiveTab(id) {
   tabs.forEach(tab => {
     const active = tab.dataset.page === id;
@@ -646,11 +564,9 @@ function setActiveTab(id) {
   });
 }
 
-/* Clicking a tab smoothly scrolls to its section. */
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
     const target = document.getElementById(tab.dataset.page);
-
     if (!target) return;
 
     setActiveTab(target.id);
@@ -664,31 +580,26 @@ tabs.forEach(tab => {
   });
 });
 
-/* Highlight the section closest to the top of the visible content. */
 function updateActiveSection() {
   const marker = 115;
-
   let currentPage = pages.find(page => {
     const rect = page.getBoundingClientRect();
     return rect.top <= marker && rect.bottom > marker;
   });
 
   if (!currentPage) {
-    currentPage = pages.find(page => {
-      return page.getBoundingClientRect().top > marker;
-    });
+    currentPage = pages.find(page =>
+      page.getBoundingClientRect().top > marker
+    );
   }
 
-  if (currentPage) {
-    setActiveTab(currentPage.id);
-  }
+  if (currentPage) setActiveTab(currentPage.id);
 }
 
 let scrollUpdatePending = false;
 
 window.addEventListener("scroll", () => {
   if (scrollUpdatePending) return;
-
   scrollUpdatePending = true;
 
   window.requestAnimationFrame(() => {
@@ -698,122 +609,6 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 
 window.addEventListener("resize", updateActiveSection);
-
-/* Enable and disable editing. */
-editBtn.addEventListener("click", () => {
-  editing = !editing;
-
-  editable.forEach(el => {
-    el.contentEditable = String(editing);
-  });
-
-  document.getElementById("photoLabel")
-    .classList.toggle("hidden", !editing);
-
-  editBtn.textContent = editing ? "Finish editing" : "Enable editing";
-
-  status.textContent = editing
-    ? "Editing enabled. Select text to change it."
-    : "Editing disabled.";
-});
-
-/* Save text changes in this browser. */
-function saveEdits() {
-  const data = {};
-
-  editable.forEach((el, i) => {
-    data[i] = el.innerHTML;
-  });
-
-  try {
-    localStorage.setItem(
-      "charity-memorial-content",
-      JSON.stringify(data)
-    );
-
-    status.textContent = " Text saved in this browser.";
-  } catch {
-    status.textContent = " Unable to save. Export a text backup.";
-  }
-}
-
-document.getElementById("saveBtn")
-  .addEventListener("click", saveEdits);
-
-/* Restore saved text when the page opens. */
-try {
-  const saved = JSON.parse(
-    localStorage.getItem("charity-memorial-content") || "{}"
-  );
-
-  editable.forEach((el, i) => {
-    if (typeof saved[i] === "string") {
-      el.innerHTML = saved[i];
-    }
-  });
-} catch {
-  status.textContent = " Previous saved text could not be loaded.";
-}
-
-/* Load a replacement portrait. */
-document.getElementById("photoInput")
-  .addEventListener("change", event => {
-    const file = event.target.files[0];
-
-    if (!file) return;
-
-    if (
-      !file.type.startsWith("image/") ||
-      file.size > 8 * 1024 * 1024
-    ) {
-      status.textContent = " Choose an image under 8 MB.";
-      event.target.value = "";
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      document.getElementById("portrait").src = reader.result;
-      status.textContent =
-        " Photo loaded for this session. Keep a separate copy of the image.";
-    };
-
-    reader.onerror = () => {
-      status.textContent = " The image could not be loaded. Try another photo.";
-    };
-
-    reader.readAsDataURL(file);
-  });
-
-/* Export editable text as a backup file. */
-document.getElementById("exportBtn")
-  .addEventListener("click", () => {
-    const backup = editable.map((el, i) =>
-      `SECTION ${i + 1}\n${el.innerText}`
-    ).join("\n\n----------------\n\n");
-
-    const blob = new Blob(
-      [backup],
-      { type: "text/plain;charset=utf-8" }
-    );
-
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-
-    link.href = url;
-    link.download = "charity-memorial-text-backup.txt";
-
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-
-    status.textContent = " Text backup downloaded.";
-  });
-
-/* Set the correct tab on initial load. */
 updateActiveSection();
 </script>
 
