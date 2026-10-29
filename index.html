@@ -69,15 +69,25 @@ nav button.active {
   color: white;
 }
 main { max-width: 1000px; margin: 28px auto; padding: 0 16px; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 .page {
-  display: none;
+  display: block;
   min-height: 540px;
   padding: clamp(22px, 5vw, 55px);
+  margin-bottom: 24px;
+  scroll-margin-top: 85px;
   background: var(--cream);
   border: 1px solid #e1d0eb;
   box-shadow: 0 8px 30px #37154a12;
 }
-.page.active { display: block; }
+
+.page.active {
+  display: block;
+}
 .cover {
   text-align: center;
   color: var(--deep);
@@ -418,15 +428,51 @@ const editable = document.querySelectorAll("[data-edit]");
 const status = document.getElementById("status");
 let editing = false;
 
-function showPage(id) {
-  pages.forEach(page => page.classList.toggle("active", page.id === id));
-  tabs.forEach(tab => tab.classList.toggle("active", tab.dataset.page === id));
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function setActiveTab(id) {
+  tabs.forEach(tab => {
+    const active = tab.dataset.page === id;
+    tab.classList.toggle("active", active);
+
+    if (active) {
+      tab.setAttribute("aria-current", "location");
+    } else {
+      tab.removeAttribute("aria-current");
+    }
+  });
 }
 
 tabs.forEach(tab => {
-  tab.addEventListener("click", () => showPage(tab.dataset.page));
+  tab.addEventListener("click", () => {
+    const target = document.getElementById(tab.dataset.page);
+
+    if (target) {
+      setActiveTab(target.id);
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
 });
+
+// Highlight the section currently being viewed.
+const sectionObserver = new IntersectionObserver(entries => {
+  const visibleSections = entries
+    .filter(entry => entry.isIntersecting)
+    .sort((a, b) =>
+      b.intersectionRatio - a.intersectionRatio
+    );
+
+  if (visibleSections.length) {
+    setActiveTab(visibleSections[0].target.id);
+  }
+}, {
+  root: null,
+  rootMargin: "-90px 0px -45% 0px",
+  threshold: [0, 0.1, 0.25, 0.5]
+});
+
+pages.forEach(page => sectionObserver.observe(page));
 
 editBtn.addEventListener("click", () => {
   editing = !editing;
